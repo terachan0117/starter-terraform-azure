@@ -141,7 +141,7 @@ Terraformのリンターとして、[TFLint](https://github.com/terraform-linter
 
 ### pre-commitのインストール
 
-コミット前にコードの整形や構文チェック等を自動で実行するためにpre-commitを設定します。実行内容は[pre-commit-confit.yaml](./.pre-commit-config.yaml)で確認できます。
+コミット前にコードの整形や構文チェック等を自動で実行するためにpre-commitを設定します。実行内容は[pre-commit-confit.yaml](./.pre-commit-config.yaml)で設定しています。
 
 1. pre-commitのインストール
 
@@ -173,19 +173,19 @@ TerraformがAzureへの認証を行えるようにAzure CLIをインストール
 
 ## Terraformの実行
 
-1. 整形と構文チェック
+1. 整形し構文をチェック
 
     ```bash
     terraform fmt -recursive && terraform validate
     ```
 
-2. 品質チェック
+2. 品質のチェック
 
     ```bash
     tflint --recursive
     ```
 
-3. セキュリティー・コンプライアンスチェック
+3. セキュリティー及びコンプライアンスのチェック
 
     ```bash
     checkov -d .
