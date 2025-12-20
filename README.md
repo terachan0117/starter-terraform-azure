@@ -141,7 +141,7 @@ Terraformのリンターとして、[TFLint](https://github.com/terraform-linter
 
 ### pre-commitのインストール
 
-コミット前にコードの整形や構文チェック等を自動で実行するためにpre-commitを設定します。実行内容は[pre-commit-confit.yaml](./.pre-commit-config.yaml)で設定しています。
+コミット前にコードの整形や構文チェック等を自動で実行するためにpre-commitを設定します。実行内容は[.pre-commit-config.yaml](./.pre-commit-config.yaml)で設定しています。
 
 1. pre-commitのインストール
 
