@@ -203,26 +203,26 @@ TerraformがAzureへの認証を行えるようにAzure CLIをインストール
     checkov -d .
     ```
 
-4. 変更予定内容の確認
-
-    ```bash
-    terraform plan
-    ```
-
-5. 変更の適用
-
-    ```bash
-    terraform apply
-    ```
-
-6. ドキュメントの生成
+4. ドキュメントの生成
 
     ```bash
     terraform-docs markdown .
     ```
 
-7. リソースグラフの生成
+5. リソースグラフの生成
 
     ```bash
     terraform graph | dot -Tsvg > resource-graph.svg
+    ```
+
+6. 変更予定内容の確認
+
+    ```bash
+    terraform plan
+    ```
+
+7. 変更の適用
+
+    ```bash
+    terraform apply
     ```

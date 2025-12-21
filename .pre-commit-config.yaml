@@ -17,13 +17,6 @@ repos:
     - id: terraform_checkov
     - id: terraform_docs
 
-- repo: https://github.com/compilerla/conventional-pre-commit
-  rev: v4.3.0
-  hooks:
-    - id: conventional-pre-commit
-      stages: [commit-msg]
-      args: [--verbose]
-
 - repo: local
   hooks:
     - id: generate-terraform-graph
@@ -32,5 +25,12 @@ repos:
       language: system
       pass_filenames: false
       always_run: true
+
+- repo: https://github.com/compilerla/conventional-pre-commit
+  rev: v4.3.0
+  hooks:
+    - id: conventional-pre-commit
+      stages: [commit-msg]
+      args: [--verbose]
 
 minimum_pre_commit_version: "4.5.1"
