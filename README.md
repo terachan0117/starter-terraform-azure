@@ -7,6 +7,8 @@ TerraformでAzureリソースを管理するスターターテンプレートで
 - [Terraformの実行](#Terraformの実行)
 
 ## Terraformコードの内容
+
+![リソースグラフ](resource-graph.svg)
 <!-- BEGIN_TF_DOCS -->
 ### Requirements
 
@@ -139,6 +141,16 @@ Terraformのリンターとして、[TFLint](https://github.com/terraform-linter
     && sudo chmod +x /usr/local/bin/terraform-docs
     ```
 
+### Graphvizのインストール
+
+リソースグラフを作成するために[Graphviz](https://gitlab.com/graphviz/graphviz)をインストールします。
+
+1. Graphvizのインストール
+
+    ```bash
+    sudo apt install graphviz
+    ```
+
 ### pre-commitのインストール
 
 コミット前にコードの整形や構文チェック等を自動で実行するためにpre-commitを設定します。実行内容は[.pre-commit-config.yaml](./.pre-commit-config.yaml)で設定しています。
@@ -207,4 +219,10 @@ TerraformがAzureへの認証を行えるようにAzure CLIをインストール
 
     ```bash
     terraform-docs markdown .
+    ```
+
+7. リソースグラフの生成
+
+    ```bash
+    terraform graph | dot -Tsvg > resource-graph.svg
     ```

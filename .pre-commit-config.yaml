@@ -24,4 +24,13 @@ repos:
       stages: [commit-msg]
       args: [--verbose]
 
+- repo: local
+  hooks:
+    - id: generate-terraform-graph
+      name: Generate Terraform resource graph
+      entry: bash -c "terraform graph | dot -Tsvg > resource-graph.svg"
+      language: system
+      pass_filenames: false
+      always_run: true
+
 minimum_pre_commit_version: "4.5.1"
