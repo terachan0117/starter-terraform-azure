@@ -86,6 +86,12 @@ tenvを使用して、Terraformをインストールします。
     tenv tf use latest-allowed
     ```
 
+3. Terraformの初期化
+
+    ```bash
+    terraform init
+    ```
+
 ### TFLintのインストール
 
 Terraformのリンターとして、[TFLint](https://github.com/terraform-linters/tflint)をインストールします。インストール中に必要になるunzipを先にインストールします。
