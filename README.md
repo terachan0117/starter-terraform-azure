@@ -41,7 +41,9 @@ No modules.
 
 ### Outputs
 
-No outputs.
+| Name | Description |
+|------|-------------|
+| <a name="output_resource_group_name"></a> [resource\_group\_name](#output\_resource\_group\_name) | リソースグループ名 |
 <!-- END_TF_DOCS -->
 
 ## セットアップ手順
