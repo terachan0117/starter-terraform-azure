@@ -5,6 +5,7 @@ TerraformでAzureリソースを管理するスターターテンプレートで
 - [Terraformコードの内容](#Terraformコードの内容)
 - [セットアップ手順](#セットアップ手順)
 - [Terraformの実行](#Terraformの実行)
+- [コントリビューションガイドライン](#コントリビューションガイドライン)
 
 ## Terraformコードの内容
 
@@ -234,3 +235,7 @@ TerraformがAzureへの認証を行えるようにAzure CLIをインストール
     ```bash
     terraform apply
     ```
+
+## コントリビューションガイドライン
+
+コントリビューターの方は、[CONTRIBUTING.md](./docs/CONTRIBUTING.md)を確認してください。
