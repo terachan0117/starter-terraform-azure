@@ -1,5 +1,51 @@
 # コントリビューションガイドライン
 
+Thank you for contributing!
+
+コントリビューターの方は、次のガイドラインに沿ってコントリビュートしてください。
+
+- [ブランチ戦略](#ブランチ戦略)
+- [コミットメッセージ規約](#コミットメッセージ規約)
+- [プルリクエストテンプレート](#プルリクエストテンプレート)
+
+## ブランチ戦略
+
+ブランチは、GitHub flowを基にした次のようなフローで運用しなければなりません。
+
+```mermaid
+gitGraph
+    commit id: "Initial commit"
+
+    branch feature/feature-a
+    checkout feature/feature-a
+    commit id: "feat: add feature"
+    checkout main
+    merge feature/feature-a id: "Merge feature to main"
+
+    branch bugfix/bugfix-a
+    checkout bugfix/bugfix-a
+    commit id: "fix: fix bug"
+    checkout main
+    merge bugfix/bugfix-a id: "Merge bugfix to main"
+
+    branch hotfix/hotfix-a
+    checkout hotfix/hotfix-a
+    commit id: "fix: hotfix bug"
+    checkout main
+    merge hotfix/hotfix-a id: "Merge hotfix to main"
+```
+
+使用するブランチの一覧と各ブランチの目的及び運用ルールは次のとおりです。
+
+| ブランチ名 | 目的 | 運用ルール |
+|--------------|------|-------------|
+| **`main`** | 本番環境 | ・直接プッシュ禁止<br>・削除禁止<br>・プルリクエスト経由でのみ更新 |
+| **`feature/<feature-name>`** | 機能開発 | ・`main`から作成<br>・完了後にプルリクエストを作成し`main`へマージ<br>・マージ後は削除 |
+| **`bugfix/<bugfix-name>`** | バグ修正 | ・`main`から作成<br>・修正後にプルリクエストを作成し`main`へマージ<br>・緊急性が高い場合は`hotfix`を使用<br>・マージ後は削除 |
+| **`hotfix/<hotfix-name>`** | 緊急のバグ修正（本番障害・重大不具合等） | ・`main`から作成<br>・修正後にプルリクエストを作成し`main`へマージ<br>・マージ後は削除 |
+
+ブランチ名の`<feature-name>`、`<bugfix-name>`及び`<hotfix-name>`には、英小文字（a–z）、数字（0–9）及びハイフン（-）以外を使用してはなりません。
+
 ## コミットメッセージ規約
 
 コミットメッセージは、[Conventional Commits 1.0.0](https://www.conventionalcommits.org/ja/v1.0.0/)の仕様を基にした次のような形にしなければなりません。
@@ -41,3 +87,7 @@ fix: correct incorrect validation logic
 ```
 docs: add installation guide for new users
 ```
+
+## プルリクエストテンプレート
+
+プルリクエストは、[pull_request_template.md](./pull_request_template.md)に沿って行わなければなりません。
