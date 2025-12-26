@@ -24,7 +24,7 @@
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
   // "forwardPorts": [],
   // Use 'postCreateCommand' to run commands after the container is created.
-  "postCreateCommand": "sudo apt update && sudo apt full-upgrade -y && sudo apt autoremove -y && sudo apt install graphviz -y",
+  "postCreateCommand": "sudo apt update && sudo apt install graphviz -y",
   // Configure tool-specific properties.
   "customizations": {
     "vscode": {
