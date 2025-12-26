@@ -1,3 +1,7 @@
+tflint {
+  required_version = "~> 0.60.0"
+}
+
 plugin "terraform" {
   enabled = true
   source  = "github.com/terraform-linters/tflint-ruleset-terraform"
