@@ -10,15 +10,11 @@
       "version": "1.14.3",
       "tflint": "0.60.0"
     },
-    "ghcr.io/devcontainers-extra/features/checkov:1": {
-      "version": "3.2.495"
-    },
+    "ghcr.io/devcontainers-extra/features/checkov:1": {},
     "ghcr.io/devcontainers-extra/features/terraform-docs:1": {
       "version": "0.21.0"
     },
-    "ghcr.io/devcontainers-extra/features/pre-commit:2": {
-      "version": "4.5.1"
-    },
+    "ghcr.io/devcontainers-extra/features/pre-commit:2": {},
     "ghcr.io/devcontainers/features/azure-cli:1": {}
   },
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
