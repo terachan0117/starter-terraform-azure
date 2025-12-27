@@ -13,7 +13,7 @@ Thank you for contributing!
 
 ### 自動セットアップ
 
-開発コンテナーを利用して自動セットアップを行えます。セットアップ内容は[devcontainer.json](./.devcontainer/devcontainer.json)で確認できます。
+開発コンテナーを利用して自動セットアップを行えます。セットアップ内容は[devcontainer.json](../.devcontainer/devcontainer.json)で確認できます。
 
 ### 手動セットアップ
 
@@ -132,7 +132,7 @@ Terraformのリンターとして、[TFLint](https://github.com/terraform-linter
 
 #### pre-commitのインストール
 
-コミット前にコードの整形や構文チェック等を自動で実行するためにpre-commitを設定します。実行内容は[.pre-commit-config.yaml](./.pre-commit-config.yaml)で設定しています。
+コミット前にコードの整形や構文チェック等を自動で実行するためにpre-commitを設定します。実行内容は[.pre-commit-config.yaml](../.pre-commit-config.yaml)で設定しています。
 
 1. pre-commitのインストール
 
