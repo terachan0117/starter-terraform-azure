@@ -49,13 +49,21 @@ No modules.
 
 ## セットアップ手順
 
-### パッケージの更新と不要パッケージの削除
+### 自動セットアップ
+
+開発コンテナーを利用して自動セットアップを行えます。セットアップ内容は[devcontainer.json](./.devcontainer/devcontainer.json)で確認できます。
+
+### 手動セットアップ
+
+手動でセットアップを行う場合は、以下の手順で作業を行なってください。
+
+#### パッケージの更新と不要パッケージの削除
 
 ```bash
 sudo apt update && sudo apt full-upgrade -y && sudo apt autoremove -y
 ```
 
-### tenvのインストール
+#### tenvのインストール
 
 Terraformのバージョンマネージャーとして、[tenv](https://github.com/tofuutils/tenv)をインストールします。
 
@@ -71,7 +79,7 @@ Terraformのバージョンマネージャーとして、[tenv](https://github.c
     sudo apt install tenv
     ```
 
-### Terraformのインストール
+#### Terraformのインストール
 
 tenvを使用して、Terraformをインストールします。
 
@@ -93,7 +101,7 @@ tenvを使用して、Terraformをインストールします。
     terraform init
     ```
 
-### TFLintのインストール
+#### TFLintのインストール
 
 Terraformのリンターとして、[TFLint](https://github.com/terraform-linters/tflint)をインストールします。インストール中に必要になるunzipを先にインストールします。
 
@@ -115,7 +123,7 @@ Terraformのリンターとして、[TFLint](https://github.com/terraform-linter
     tflint --init
     ```
 
-### checkovのインストール
+#### checkovのインストール
 
 セキュリティー及びコンプライアンスチェッカーとして、[checkov](https://github.com/bridgecrewio/checkov)をインストールします。インストールに必要になるpipxを先にインストールします。
 
@@ -137,7 +145,7 @@ Terraformのリンターとして、[TFLint](https://github.com/terraform-linter
     pipx install checkov
     ```
 
-### terraform-docsのインストール
+#### terraform-docsのインストール
 
 ドキュメントの自動生成ツールとして、[terraform-docs](https://github.com/terraform-docs/terraform-docs)をインストールします。
 
@@ -150,7 +158,7 @@ Terraformのリンターとして、[TFLint](https://github.com/terraform-linter
     && sudo chmod +x /usr/local/bin/terraform-docs
     ```
 
-### Graphvizのインストール
+#### Graphvizのインストール
 
 リソースグラフを作成するために[Graphviz](https://gitlab.com/graphviz/graphviz)をインストールします。
 
@@ -160,7 +168,7 @@ Terraformのリンターとして、[TFLint](https://github.com/terraform-linter
     sudo apt install graphviz
     ```
 
-### pre-commitのインストール
+#### pre-commitのインストール
 
 コミット前にコードの整形や構文チェック等を自動で実行するためにpre-commitを設定します。実行内容は[.pre-commit-config.yaml](./.pre-commit-config.yaml)で設定しています。
 
@@ -176,9 +184,9 @@ Terraformのリンターとして、[TFLint](https://github.com/terraform-linter
     pre-commit install
     ```
 
-### Azure CLIのインストール
+#### Azure CLIのインストール
 
-TerraformがAzureへの認証を行えるようにAzure CLIをインストールしログインしておきます。
+TerraformがAzureへの認証を行えるようにAzure CLIをインストールしておきます。
 
 1. Azure CLIのインストール
 
@@ -186,51 +194,51 @@ TerraformがAzureへの認証を行えるようにAzure CLIをインストール
     curl -fsLS 'https://aka.ms/InstallAzureCLIDeb' | sudo bash
     ```
 
-2. ログイン
+## Terraformの実行
+
+1. Azureへのログイン
 
     ```bash
     az login
     ```
 
-## Terraformの実行
-
-1. 整形し構文をチェック
+2. 整形し構文をチェック
 
     ```bash
     terraform fmt -recursive && terraform validate
     ```
 
-2. 品質のチェック
+3. 品質のチェック
 
     ```bash
     tflint --recursive
     ```
 
-3. セキュリティー及びコンプライアンスのチェック
+4. セキュリティー及びコンプライアンスのチェック
 
     ```bash
     checkov -d .
     ```
 
-4. ドキュメントの生成
+5. ドキュメントの生成
 
     ```bash
     terraform-docs markdown .
     ```
 
-5. リソースグラフの生成
+6. リソースグラフの生成
 
     ```bash
     terraform graph | dot -Tsvg > resource-graph.svg
     ```
 
-6. 変更予定内容の確認
+7. 変更予定内容の確認
 
     ```bash
     terraform plan
     ```
 
-7. 変更の適用
+8. 変更の適用
 
     ```bash
     terraform apply
