@@ -20,7 +20,7 @@
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
   // "forwardPorts": [],
   // Use 'postCreateCommand' to run commands after the container is created.
-  "postCreateCommand": "sudo apt update && sudo apt install graphviz -y",
+  "postCreateCommand": "sudo apt update && sudo apt install graphviz -y && terraform init && tflint --init && pre-commit install",
   // Configure tool-specific properties.
   "customizations": {
     "vscode": {
