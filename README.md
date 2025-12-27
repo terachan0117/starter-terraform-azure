@@ -2,11 +2,11 @@
 
 TerraformでAzureリソースを管理するスターターテンプレートです。
 
-- [Terraformコードの内容](#Terraformコードの内容)
-- [Terraformの実行手順](#Terraformの実行手順)
+- [Terraform構成](#Terraform構成)
+- [実行手順](#実行手順)
 - [コントリビューションガイドライン](#コントリビューションガイドライン)
 
-## Terraformコードの内容
+## Terraform構成
 
 ![リソースグラフ](resource-graph.svg)
 <!-- BEGIN_TF_DOCS -->
@@ -46,7 +46,7 @@ No modules.
 | <a name="output_resource_group_name"></a> [resource\_group\_name](#output\_resource\_group\_name) | リソースグループ名 |
 <!-- END_TF_DOCS -->
 
-## Terraformの実行手順
+## 実行手順
 
 1. Azureへのログイン
 
