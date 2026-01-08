@@ -1,5 +1,7 @@
 formatter: "markdown"
 
+version: "~> 0.21.0"
+
 output:
   file: "README.md"
 
